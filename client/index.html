@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10131c" />
+    <title>CLASH ZERO</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="lobby-topbar" id="home-header">
+        <div class="lobby-brand"><span class="brand-sigil" aria-hidden="true">CZ</span><div><h1>CLASH <span>ZERO</span></h1><p>COMBAT NETWORK / LOBBY</p></div></div>
+        <div class="lobby-top-status"><i></i><span>基地ネットワーク稼働中</span><b>LOCAL</b></div>
+      </header>
+
+      <section class="lobby-screen" id="mode-screen" aria-label="CLASH ZERO ロビー">
+        <div class="lobby-stage">
+          <aside class="roster-panel" aria-label="キャラクター選択">
+            <div class="roster-heading"><span>01</span><div><p>ROSTER</p><h2>キャラクター</h2></div></div>
+            <div class="roster-count"><span>AVAILABLE OPERATORS</span><b>01 <i>/ 08</i></b></div>
+            <div class="roster-slots" aria-label="キャラクター枠">
+              <button type="button" class="roster-slot roster-slot-active roster-slot-preview" id="prototype-slot" aria-label="コジュを選択" aria-pressed="true">
+                <svg class="prototype-icon" viewBox="0 0 96 96" role="img" aria-label="コジュの2Dアイコン">
+                  <path class="icon-halo" d="M48 5 88 28v40L48 91 8 68V28L48 5Z" />
+                  <circle class="icon-aura" cx="48" cy="48" r="37" />
+                  <g class="icon-wing-left">
+                    <path d="M41 39C28 25 15 18 4 17c5 16 15 25 35 33Z" />
+                    <path d="M40 43C25 34 12 32 4 35c8 12 19 18 37 20Z" />
+                    <path d="M39 47C25 44 13 47 7 53c10 7 21 9 34 5Z" />
+                  </g>
+                  <g class="icon-wing-right">
+                    <path d="M55 39c13-14 26-21 37-22-5 16-15 25-35 33Z" />
+                    <path d="M56 43c15-9 28-11 36-8-8 12-19 18-37 20Z" />
+                    <path d="M57 47c14-3 26 0 32 6-10 7-21 9-34 5Z" />
+                  </g>
+                  <path class="icon-shoulders" d="m18 79 5-18 17-11h16l17 11 5 18-13 9H31l-13-9Z" />
+                  <path class="icon-neck" d="M39 48h18v13H39z" />
+                  <path class="icon-helmet" d="M26 41c1-17 10-25 22-25s21 8 22 25l-7 14-9 7H42l-9-7-7-14Z" />
+                  <path class="icon-face" d="M34 34h28v14l-4 10-10 6-10-6-4-10V34Z" />
+                  <path class="icon-fringe" d="M27 43c0-18 8-27 21-27s21 9 21 27l-7-6-5 10-8-8-7 9-7-6-8 8Z" />
+                  <path class="icon-mask" d="M31 31 48 27l17 4-2 22-15 12-15-12-2-22Z" />
+                  <path class="icon-mask-detail" d="M48 32v22m-10-10 8-3m12 3-8-3m-2 12 2 2-2 2-2-2 2-2Z" />
+                  <path class="icon-eyes" d="M37 43h7m10 0h7" />
+                  <path class="icon-core" d="m48 52 4 4-4 4-4-4 4-4Z" />
+                  <path class="icon-mark" d="m40 69 8 4 8-4" />
+                </svg>
+                <span class="prototype-slot-tag">KOJU</span><i>01</i>
+              </button>
+              <button type="button" class="roster-slot" aria-label="未実装キャラクター枠" disabled><span>+</span><i>—</i></button>
+              <button type="button" class="roster-slot" aria-label="未実装キャラクター枠" disabled><span>+</span><i>—</i></button>
+              <button type="button" class="roster-slot" aria-label="未実装キャラクター枠" disabled><span>+</span><i>—</i></button>
+              <button type="button" class="roster-slot" aria-label="未実装キャラクター枠" disabled><span>+</span><i>—</i></button>
+              <button type="button" class="roster-slot" aria-label="未実装キャラクター枠" disabled><span>+</span><i>—</i></button>
+            </div>
+            <div class="roster-empty-note"><span class="empty-pulse"></span><p>次の仲間たちも<br />これから登場するよ</p></div>
+            <div class="roster-foot"><span>ROSTER DATA</span><b>IN DEVELOPMENT</b></div>
+          </aside>
+
+          <main class="operator-stage" aria-label="選択中キャラクター">
+            <div class="stage-coordinate coordinate-top">HANGAR 04 <span>·</span> NEUTRAL BAY</div>
+            <div class="stage-grid-lines" aria-hidden="true"></div>
+            <div class="stage-orbit stage-orbit-outer" aria-hidden="true"></div>
+            <div class="stage-orbit stage-orbit-inner" aria-hidden="true"></div>
+            <div class="stage-light stage-light-left" aria-hidden="true"></div>
+            <div class="stage-light stage-light-right" aria-hidden="true"></div>
+            <div class="operator-caption"><span>KOJU / FALLEN ANGEL</span><i></i><span>PLAYTEST STATS</span></div>
+            <div class="operator-placeholder" aria-hidden="true">
+              <div class="operator-shadow"></div>
+              <div class="operator-aura" aria-hidden="true"><i class="aura-orbit aura-orbit-one"></i><i class="aura-orbit aura-orbit-two"></i><span class="aura-core"></span><span class="aura-plume aura-plume-left"></span><span class="aura-plume aura-plume-right"></span></div>
+              <svg class="operator-wings" viewBox="0 0 360 250" aria-hidden="true">
+                <defs>
+                  <linearGradient id="koju-dark-wing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#443454" /><stop offset="0.55" stop-color="#211b2c" /><stop offset="1" stop-color="#100e17" /></linearGradient>
+                  <linearGradient id="koju-dark-feather" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#211929" /><stop offset="1" stop-color="#40324c" /></linearGradient>
+                  <linearGradient id="koju-light-wing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="0.5" stop-color="#e1e6f0" /><stop offset="1" stop-color="#aebbd0" /></linearGradient>
+                  <linearGradient id="koju-light-feather" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d4dce8" /><stop offset="1" stop-color="#f7f8fc" /></linearGradient>
+                </defs>
+                <g class="wing-left wing-upper">
+                  <path class="wing-mass" d="M164 109C132 73 83 31 18 12c12 33 18 54 28 72 24 25 68 42 115 56Z" />
+                  <path class="wing-feather" d="M155 103 34 24c17 35 43 63 111 92Z" />
+                  <path class="wing-feather" d="M145 116 25 43c15 35 48 59 112 83Z" />
+                  <path class="wing-feather" d="M132 127 36 66c19 32 47 51 98 68Z" />
+                  <path class="wing-vein" d="M153 109C111 77 72 49 34 24M144 121C104 98 65 70 25 43M132 133C97 118 65 91 36 66" />
+                  <path class="wing-edge" d="M164 109C132 73 83 31 18 12" />
+                </g>
+                <g class="wing-left wing-lower">
+                  <path class="wing-mass" d="M164 119C121 103 69 91 15 101c26 27 44 43 62 55 31 10 65 6 104-14Z" />
+                  <path class="wing-feather" d="m154 124-126-15c28 29 57 42 116 45Z" />
+                  <path class="wing-feather" d="m143 137-104-1c27 22 52 30 95 27Z" />
+                  <path class="wing-vein" d="M153 129 28 109M143 141 39 136" />
+                  <path class="wing-edge" d="M164 119C121 103 69 91 15 101" />
+                </g>
+                <g class="wing-right wing-upper">
+                  <path class="wing-mass" d="M196 109c32-36 81-78 146-97-12 33-18 54-28 72-24 25-68 42-115 56Z" />
+                  <path class="wing-feather" d="m205 103 121-79c-17 35-43 63-111 92Z" />
+                  <path class="wing-feather" d="m215 116 120-73c-15 35-48 59-112 83Z" />
+                  <path class="wing-feather" d="m228 127 96-61c-19 32-47 51-98 68Z" />
+                  <path class="wing-vein" d="M207 109 326 24M216 121l119-78M228 133l96-67" />
+                  <path class="wing-edge" d="M196 109c32-36 81-78 146-97" />
+                </g>
+                <g class="wing-right wing-lower">
+                  <path class="wing-mass" d="M196 119c43-16 95-28 149-18-26 27-44 43-62 55-31 10-65 6-104-14Z" />
+                  <path class="wing-feather" d="m206 124 126-15c-28 29-57 42-116 45Z" />
+                  <path class="wing-feather" d="m217 137 104-1c-27 22-52 30-95 27Z" />
+                  <path class="wing-vein" d="m207 129 125-20m-115 32 104-5" />
+                  <path class="wing-edge" d="M196 119c43-16 95-28 149-18" />
+                </g>
+              </svg>
+              <div class="operator-magic" aria-hidden="true"><i class="magic-ring"></i><span class="magic-sigil">✦</span><b class="magic-spark magic-spark-one"></b><b class="magic-spark magic-spark-two"></b></div>
+              <div class="operator-halo"></div>
+              <div class="operator-cape"></div>
+              <div class="operator-leg operator-leg-left"></div>
+              <div class="operator-leg operator-leg-right"></div>
+              <div class="operator-body"><i class="operator-core"></i><b class="operator-mark">CZ</b></div>
+              <div class="operator-arm operator-arm-left"></div>
+              <div class="operator-arm operator-arm-right"></div>
+              <div class="operator-neck"></div>
+              <div class="operator-head">
+                <span class="operator-face"></span>
+                <span class="operator-hair-lock operator-hair-lock-left"></span>
+                <span class="operator-hair-lock operator-hair-lock-right"></span>
+                <span class="operator-mask"></span>
+                <i></i>
+              </div>
+            </div>
+            <div class="operator-nameplate"><span>FALLEN ANGEL / PLAYTEST BUILD</span><h2>コジュ</h2><p>初回テスト用の基本ステータスを設定。スキルや本番バランスはこれから。</p></div>
+            <div class="stage-coordinate coordinate-bottom"><span>CLASH ZERO</span><span>KOJU — CHARACTER PREVIEW</span></div>
+          </main>
+
+          <aside class="lobby-side-panel" aria-label="ロビーステータス">
+            <div class="side-panel-top"><span>SESSION</span><b><i></i> STANDBY</b></div>
+            <div class="side-readout"><span>SELECTED OPERATOR</span><strong>コジュ / 01</strong><small>BASIC STATS · SKILLS TBD</small></div>
+            <section class="operator-stats" aria-label="コジュの仮ステータス">
+              <div class="stats-heading"><span>PROVISIONAL STATS</span><i>TEST</i></div>
+              <div class="stats-grid">
+                <div><span>HP</span><b id="stat-hp">110</b></div>
+                <div><span>MOVE</span><b id="stat-move">250</b></div>
+                <div><span>ATK</span><b id="stat-attack">28</b></div>
+                <div><span>DASH</span><b id="stat-dash">700</b></div>
+              </div>
+              <small>初回テスト用 · 後で調整</small>
+            </section>
+            <div class="side-readout"><span>COMBAT RECORD</span><strong>-- <i>W</i> / -- <i>L</i></strong><small>FIRST DEPLOYMENT PENDING</small></div>
+            <div class="side-panel-bottom"><span>FIELD ACCESS</span><span>READY WHEN YOU ARE</span></div>
+          </aside>
+
+          <div class="mode-launcher-wrap">
+            <button class="mode-launcher" id="open-mode-picker" type="button" aria-expanded="false" aria-controls="mode-picker">
+              <span class="launcher-icon" aria-hidden="true"><i></i><b></b></span>
+              <span class="launcher-copy"><small>次の出撃先</small><strong>モードを選ぶ</strong></span>
+              <span class="launcher-arrow" aria-hidden="true">↗</span>
+            </button>
+            <section class="mode-picker" id="mode-picker" aria-label="ゲームモード" hidden>
+              <div class="picker-heading"><span>SELECT MODE</span><button id="close-mode-picker" type="button" aria-label="閉じる">×</button></div>
+              <button class="picker-mode picker-mode-ai" id="choose-training" type="button"><span class="picker-mode-index">01</span><span><small>SOLO SIMULATION</small><strong>VS A.I.</strong></span><b aria-hidden="true">↗</b></button>
+              <button class="picker-mode picker-mode-online" id="choose-online" type="button"><span class="picker-mode-index">02</span><span><small>PRIVATE MATCH / 1 VS 1</small><strong>ONLINE DUEL</strong></span><b aria-hidden="true">↗</b></button>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-screen training-screen" id="training-screen" aria-label="VS A.I.練習モード" hidden>
+        <header class="screen-toolbar">
+          <button class="back-button" id="back-from-training" type="button"><span aria-hidden="true">←</span> モード選択</button>
+          <div class="screen-title"><p>SIMULATION / SOLO</p><h2>COMBAT LAB</h2></div>
+          <span class="screen-mode-tag">VS A.I.</span>
+        </header>
+
+        <div class="orientation-hint" role="status">
+          <span class="rotate-icon" aria-hidden="true">↻</span>
+          <p>端末を横向きにしてプレイしてね</p>
+        </div>
+
+        <section class="game-panel" aria-label="トレーニング画面">
+          <div class="panel-bar">
+            <span class="mode-label"><span class="status-dot"></span>FREE PRACTICE</span>
+            <div class="player-health" aria-label="コジュのHP">
+              <div class="health-label"><span>KOJU</span><span id="player-hp-value" aria-live="polite">110 HP</span></div>
+              <div class="health-track"><span class="health-fill player-health-fill" id="player-health-fill"></span></div>
+            </div>
+            <span class="player-label" id="combat-status" role="status" aria-live="polite">SPARRING AI · 100 HP</span>
+          </div>
+          <div class="arena" id="arena" aria-label="移動練習エリア">
+            <div class="arena-mark" aria-hidden="true">CZ</div>
+            <div class="target" id="target" aria-label="対戦AI">
+              <div class="target-hud" aria-hidden="true">
+                <div class="target-label"><span>SPARRING AI</span><span id="target-hp-value">100</span></div>
+                <div class="health-track"><span class="health-fill" id="target-health-fill"></span></div>
+              </div>
+              <div class="target-body"><i class="ai-eye"></i><b class="ai-core"></b></div>
+            </div>
+            <div class="player" id="player" aria-label="プレイヤー">
+              <span class="dash-trail dash-trail-one" aria-hidden="true"></span>
+              <span class="dash-trail dash-trail-two" aria-hidden="true"></span>
+              <svg class="player-avatar" viewBox="0 0 96 96" aria-hidden="true">
+                <circle class="avatar-aura" cx="48" cy="48" r="39" />
+                <path class="avatar-wing avatar-wing-dark" d="M39 37C27 24 14 17 4 17c5 16 15 26 36 34Zm1 7C25 35 12 33 4 36c8 12 19 18 38 20Z" />
+                <path class="avatar-wing avatar-wing-light" d="M57 37c12-13 25-20 35-20-5 16-15 26-36 34Zm-1 7c15-9 28-11 36-8-8 12-19 18-38 20Z" />
+                <path class="avatar-cloak" d="m18 80 6-20 17-11h14l17 11 6 20-13 8H31Z" />
+                <path class="avatar-head" d="M27 42c0-17 8-25 21-25s21 8 21 25l-6 13-9 7H42l-9-7Z" />
+                <path class="avatar-mask" d="m31 40 17-5 17 5-4 12-13 9-13-9Z" />
+                <path class="avatar-mask-mark" d="M48 38v14m-8-7 8-3 8 3m-8 5 2 2-2 2-2-2 2-2Z" />
+                <path class="avatar-core" d="m48 68 5 5-5 5-5-5 5-5Z" />
+              </svg>
+              <span class="attack-slash" aria-hidden="true"></span>
+              <span class="perfect-dodge-label" aria-hidden="true">PERFECT DODGE</span>
+            </div>
+          </div>
+          <p class="controls-hint">
+            <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>・方向キーで移動 / <kbd>J</kbd>・<kbd class="wide-key">Space</kbd>で攻撃 / <kbd class="wide-key">Shift</kbd>でダッシュ
+          </p>
+          <div class="touch-controls" aria-label="タッチ操作">
+            <button type="button" data-direction="up" aria-label="上へ移動">▲</button>
+            <button type="button" data-direction="left" aria-label="左へ移動">◀</button>
+            <button type="button" data-direction="down" aria-label="下へ移動">▼</button>
+            <button type="button" data-direction="right" aria-label="右へ移動">▶</button>
+            <button type="button" class="attack-button" data-action="attack" aria-label="攻撃">攻撃</button>
+            <button type="button" class="dash-button" data-action="dash" aria-label="ダッシュ">DASH</button>
+          </div>
+          <div class="match-result" id="match-result" role="dialog" aria-modal="true" aria-labelledby="match-result-title" hidden>
+            <div class="match-result-panel">
+              <p class="result-kicker" id="match-result-kicker">ROUND COMPLETE</p>
+              <h2 id="match-result-title">YOU WIN</h2>
+              <p id="match-result-message">SPARRING AIを撃破！</p>
+              <div class="result-actions">
+                <button id="retry-match" type="button">もう一度戦う</button>
+                <button id="return-to-lobby" type="button">ロビーへ戻る</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="app-screen online-screen" id="online-screen" aria-label="オンライン対人戦" hidden>
+        <header class="screen-toolbar">
+          <button class="back-button" id="back-from-online" type="button"><span aria-hidden="true">←</span> モード選択</button>
+          <div class="screen-title"><p>NETWORK / PRIVATE MATCH</p><h2>ONLINE DUEL</h2></div>
+          <span class="connection-badge" id="connection-badge">OFFLINE</span>
+        </header>
+
+        <div class="online-layout">
+          <section class="versus-board" aria-label="対戦参加者">
+            <article class="fighter-slot fighter-slot-self">
+              <div class="slot-topline"><span>OPERATOR / 01</span><span class="slot-status" id="local-seat-status">LOCAL</span></div>
+              <div class="slot-figure slot-figure-self" aria-hidden="true"><span>01</span><i></i></div>
+              <div class="slot-name"><h3>YOU</h3><p>YOUR SIDE OF THE ARENA</p></div>
+            </article>
+            <div class="versus-core" aria-hidden="true"><span>VS</span><i></i></div>
+            <article class="fighter-slot fighter-slot-rival" id="opponent-seat">
+              <div class="slot-topline"><span>OPERATOR / 02</span><span class="slot-status" id="opponent-seat-status">WAITING</span></div>
+              <div class="slot-figure slot-figure-rival" aria-hidden="true"><span>02</span><i></i></div>
+              <div class="slot-name"><h3>RIVAL</h3><p>AWAITING CONNECTION</p></div>
+            </article>
+          </section>
+
+          <section class="online-panel" aria-label="ルーム接続">
+            <div class="online-heading">
+              <div>
+                <p class="online-eyebrow">MATCHMAKING / ROOM LINK</p>
+                <p class="online-title">ルームコードで接続</p>
+              </div>
+            </div>
+            <div class="room-actions">
+              <button class="create-room-button" id="create-room-button" type="button">ルームを作る</button>
+              <form class="join-room-form" id="join-room-form">
+                <label class="visually-hidden" for="room-code-input">ルームコード</label>
+                <input id="room-code-input" name="room-code" type="text" placeholder="ルームコード" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="16" required />
+                <button type="submit">参加</button>
+              </form>
+            </div>
+            <div class="room-info" id="room-info" hidden>
+              <div class="room-code-block">
+                <span>ROOM CODE</span>
+                <strong id="room-code-output"></strong>
+                <button id="copy-room-code-button" type="button" aria-label="ルームコードをコピー">コピー</button>
+              </div>
+              <span class="room-player-status" id="room-player-status">相手を待っています · 1/2</span>
+              <button class="leave-room-button" id="leave-room-button" type="button">退出</button>
+            </div>
+            <p class="online-message" id="online-message" role="status" aria-live="polite">ルームを作ってコードを友達に共有しよう。</p>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
